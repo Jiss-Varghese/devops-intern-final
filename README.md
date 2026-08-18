@@ -190,3 +190,8 @@ Output
 Dockerfile created
 Docker image successfully built
 Python application successfully executed inside a container
+
+git status
+git add Dockerfile README.md
+git commit -m "Add Docker containerization"
+git push
