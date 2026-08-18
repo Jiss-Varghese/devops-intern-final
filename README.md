@@ -101,3 +101,92 @@ git add README.md hello.py
 git commit -m "Add initial project files"
 git branch -M main
 git push -u origin main
+
+
+Linux & Scripting Basics
+
+Create a Bash script that displays basic system information.
+
+The script is located at:
+
+scripts/sysinfo.sh
+
+The script displays:
+
+Current username
+Current date and time
+Disk usage
+Make the Script Executable
+chmod +x scripts/sysinfo.sh
+
+Run the Script
+./scripts/sysinfo.sh
+
+The script uses Linux/macOS commands such as:
+
+whoami
+date
+df -h
+ Output
+User:
+jiss
+
+Date:
+Mon Aug 18 19:00:00 SGT 2026
+
+Disk Usage:
+Filesystem      Size   Used  Avail Capacity
+...
+Output
+Bash system-information script created
+Script made executable
+System information successfully displayed
+
+Docker Basics
+
+
+Containerize the Python application using Docker.
+
+The Docker configuration is stored in:
+
+Dockerfile
+Dockerfile
+
+The Docker image uses Python as its base image and runs hello.py.
+
+Build the Docker Image
+
+From the project root:
+
+docker build -t hello-devops .
+
+Check the image:
+
+docker images
+Run the Container
+docker run --rm hello-devops
+
+ output:
+
+Hello, DevOps!
+Useful Docker Commands
+
+Check running containers:
+
+docker ps
+
+Check all containers:
+
+docker ps -a
+
+Check images:
+
+docker images
+
+Remove an image:
+
+docker rmi hello-devops
+Output
+Dockerfile created
+Docker image successfully built
+Python application successfully executed inside a container
