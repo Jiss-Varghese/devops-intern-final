@@ -257,6 +257,9 @@ git commit -m "Add GitHub Actions CI pipeline"
 git push
 
 
+git add README.md
+git commit -m "Add CI status badge to README.md"
+git push
 
 
 
