@@ -1,5 +1,8 @@
 DevOps Intern Final Assessment
 
+(https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml/badge.svg)
+
+
 Name: Jiss Varghese
 Date: 18 August 2026
 Repository: devops-intern-final
@@ -195,3 +198,61 @@ git status
 git add Dockerfile README.md
 git commit -m "Add Docker containerization"
 git push
+
+
+CI/CD with GitHub Actions
+
+
+Create an automated CI pipeline using GitHub Actions.
+
+The workflow is stored in:
+
+.github/workflows/ci.yml
+CI Pipeline
+
+The workflow performs the following steps:
+
+Checks out the repository
+Sets up Python
+Runs the Python application
+Verifies that the application executes successfully
+GitHub Actions Workflow
+
+The workflow uses:
+
+actions/checkout
+actions/setup-python
+
+Python version:
+
+3.12
+Trigger
+
+The workflow runs automatically when code is pushed to the repository.
+
+on: push
+Check the Workflow
+
+After pushing code:
+
+Open the GitHub repository.
+Select Actions.
+Select the CI workflow.
+Check the workflow run.
+
+A successful workflow indicates that the application passes the CI step.
+
+Output
+GitHub Actions workflow created
+Automated testing/execution configured
+CI pipeline successfully executed on GitHub
+
+
+Commit and push the workflow
+
+git add .github/workflows/ci.yml
+git commit -m "Add GitHub Actions CI pipeline"
+git push
+
+
+
