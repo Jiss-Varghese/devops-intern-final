@@ -1,6 +1,6 @@
 DevOps Intern Final Assessment
 
-(https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml/badge.svg)
+https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml/badge.svg
 
 
 Name: Jiss Varghese
@@ -238,6 +238,8 @@ After pushing code:
 Open the GitHub repository.
 Select Actions.
 Select the CI workflow.
+open the workflow and look for: Run hello.py 
+Output: Hello,DevOps!
 Check the workflow run.
 
 A successful workflow indicates that the application passes the CI step.
@@ -253,6 +255,8 @@ Commit and push the workflow
 git add .github/workflows/ci.yml
 git commit -m "Add GitHub Actions CI pipeline"
 git push
+
+
 
 
 
