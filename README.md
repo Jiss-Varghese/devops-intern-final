@@ -104,7 +104,7 @@ Initial Git commit pushed to GitHub
 #### git push -u origin main
 
 
-## Linux & Scripting Basics
+## step 2 - Linux & Scripting Basics
 
 Create a Bash script that displays basic system information.
 
@@ -134,7 +134,7 @@ Output<br>
 `-`Script made executable<br>
 `-`System information successfully displayed
 
-## Docker Basics
+## step 3 - Docker Basics
 
 
 Containerize the Python application using Docker.
@@ -176,32 +176,29 @@ Output<br>
 #### git push
 
 
-CI/CD with GitHub Actions
+## step 4 - CI/CD with GitHub Actions
 
 
 Create an automated CI pipeline using GitHub Actions.
 
-The workflow is stored in:
+**The workflow is stored in:** .github/workflows/ci.yml
 
-.github/workflows/ci.yml
 CI Pipeline
 
 The workflow performs the following steps:
 
-Checks out the repository
-Sets up Python
-Runs the Python application
-Verifies that the application executes successfully
+`-`Checks out the repository<br>
+`-`Sets up Python<br>
+`-`Runs the Python application<br>
+`-`Verifies that the application executes successfully<br>
+
 GitHub Actions Workflow
 
-The workflow uses:
+**The workflow uses:** actions/checkout
+**actions/setup-python:** 
 
-actions/checkout
-actions/setup-python
+**Python version:** 3.12
 
-Python version:
-
-3.12
 Trigger
 
 The workflow runs automatically when code is pushed to the repository.
