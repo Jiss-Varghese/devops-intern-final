@@ -194,7 +194,7 @@ The workflow performs the following steps:
 
 GitHub Actions Workflow
 
-**The workflow uses:** actions/checkout
+**The workflow uses:** actions/checkout<br>
 **actions/setup-python:** Python version 3.12
 
 Trigger
