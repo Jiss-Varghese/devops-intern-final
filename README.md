@@ -204,13 +204,16 @@ The workflow runs automatically when code is pushed to the repository.
 on: push
 Check the Workflow
 
-After pushing code:
+After pushing code:<br>
 
-Open the GitHub repository.
-Select Actions.
-Select the CI workflow.
-open the workflow and look for: Run hello.py 
-Output: Hello,DevOps!
+Open the GitHub repository<br>
+Select Actions<br>
+Select the CI workflow<br>
+open the workflow and look for: Run hello.py <br>
+ 
+ Output 
+Hello,DevOps!
+
 Check the workflow run.
 
 A successful workflow indicates that the application passes the CI step.
