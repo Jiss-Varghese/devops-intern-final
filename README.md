@@ -7,18 +7,18 @@ Name: Jiss Varghese
 Date: 18 August 2026
 Repository: devops-intern-final
 
-#Project Overview#
+# Project Overview
 
 This project demonstrates a complete DevOps workflow using open-source tools and practices.
 
-The workflow covers:
+#The workflow covers:
 
-Git & GitHub
-Linux & Bash Scripting
-Docker
-CI/CD with GitHub Actions
-Container Deployment with Nomad
-Monitoring with Grafana Loki and Grafana Alloy
+## Git & GitHub
+## Linux & Bash Scripting
+## Docker
+## CI/CD with GitHub Actions
+## Container Deployment with Nomad
+## Monitoring with Grafana Loki and Grafana Alloy
 ``` text
 DevOps Workflow
 GitHub
