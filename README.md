@@ -126,10 +126,10 @@ df -h<br>
  
  Output<br>
 **User:** jiss<br>
-**Date:** Mon Aug 18 19:00:00 SGT 2026
+**Date:** Mon Aug 18 19:00:00 SGT 2026<br>
 **Disk Usage:**  (screenshot attached)
 
-Output
+Output<br>
 `-`Bash system-information script created<br>
 `-`Script made executable<br>
 `-`System information successfully displayed
