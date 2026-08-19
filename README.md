@@ -36,8 +36,11 @@ Grafana Loki + Alloy Monitoring
 Project Structure
 
 ## The final repository is  containing  the following structure:
+
+### devops-intern-final/
+
 ```text
-devops-intern-final/
+
 │
 ├── README.md
 ├── hello.py
@@ -62,48 +65,48 @@ devops-intern-final/
 
 ### Create a public GitHub repository and initialize the project 
 
-Repository name:devops-intern-final
+### Repository name:devops-intern-final
 
 The repository is public and contains all project source code, configuration files, documentation, and screenshots.
 
-Application
+### Application
 
 The sample Python application is stored in:
 
-hello.py
+### hello.py
 
 The application prints:
 
-Hello, DevOps!
+### Hello, DevOps!
 
 Run the Application
-python3 hello.py
+### python3 hello.py
 
-Output:
-Hello, DevOps!
+### Output:
+### Hello, DevOps!
 
 Git Commands Used
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin <https://github.com/Jiss-Varghese/devops-intern-final.git>
-git push -u origin main
+### git init
+### git add .
+### git commit -m "Initial commit"
+### git branch -M main
+### git remote add origin <https://github.com/Jiss-Varghese/devops-intern-final.git>
+### git push -u origin main
 Output
-Public GitHub repository created
-README.md added
-hello.py added
+#### Public GitHub repository created
+#### README.md added
+#### hello.py added
 Initial Git commit pushed to GitHub
 
-git remote add origin https://github.com/Jiss-Varghese/devops-intern-final.git
-git remote -v
-git add README.md hello.py
-git commit -m "Add initial project files"
-git branch -M main
-git push -u origin main
+### git remote add origin https://github.com/Jiss-Varghese/devops-intern-final.git
+### git remote -v
+### git add README.md hello.py
+### git commit -m "Add initial project files"
+### git branch -M main
+### git push -u origin main
 
 
-Linux & Scripting Basics
+## Linux & Scripting Basics
 
 Create a Bash script that displays basic system information.
 
