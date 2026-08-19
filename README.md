@@ -90,8 +90,8 @@ Git Commands Used
 #### git push -u origin main
 
 Output
-`-` Public GitHub repository created
-`-` README.md added
+`-` Public GitHub repository created<br>
+`-` README.md added<br>
 `-` hello.py added
 
 Initial Git commit pushed to GitHub
