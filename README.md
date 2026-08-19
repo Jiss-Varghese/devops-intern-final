@@ -5,13 +5,13 @@ https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml/ba
 
 **Name:** Jiss Varghese<br>
 **Date:** 18 August 2026<br>
-Repository: devops-intern-final
+**Repository:** devops-intern-final
 
 # Project Overview
 
 This project demonstrates a complete DevOps workflow using open-source tools and practices.
 
-#The workflow covers:
+## The workflow covers:
 
 ## Git & GitHub
 ## Linux & Bash Scripting
@@ -35,7 +35,7 @@ Grafana Loki + Alloy Monitoring
 ```
 Project Structure
 
-The final repository is  containing  the following structure:
+## The final repository is  containing  the following structure:
 ```text
 devops-intern-final/
 │
@@ -57,16 +57,12 @@ devops-intern-final/
     ├── loki-config.yml
     └── alloy-config.alloy
 ```
-Step 1 — Git & GitHub Setup
+## Step 1 — Git & GitHub Setup 
 
 
-Create a public GitHub repository and initialize the project 
+### Create a public GitHub repository and initialize the project 
 
-Repository
-
-Repository name:
-
-devops-intern-final
+Repository name:devops-intern-final
 
 The repository is public and contains all project source code, configuration files, documentation, and screenshots.
 
