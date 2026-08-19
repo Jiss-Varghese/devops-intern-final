@@ -1,10 +1,10 @@
-DevOps Intern Final Assessment
+# DevOps Intern Final Assessment
 
 https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml/badge.svg
 
 
-Name: Jiss Varghese
-Date: 18 August 2026
+**Name:** Jiss Varghese
+**Date:** 18 August 2026
 Repository: devops-intern-final
 
 # Project Overview
