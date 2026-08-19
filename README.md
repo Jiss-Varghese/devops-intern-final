@@ -82,24 +82,26 @@ The repository is public and contains all project source code, configuration fil
  **Output:** Hello, DevOps!
 
 Git Commands Used
-### git init
-### git add .
-### git commit -m "Initial commit"
-### git branch -M main
-### git remote add origin <https://github.com/Jiss-Varghese/devops-intern-final.git>
-### git push -u origin main
+#### git init
+#### git add .
+#### git commit -m "Initial commit"
+#### git branch -M main
+#### git remote add origin <https://github.com/Jiss-Varghese/devops-intern-final.git>
+#### git push -u origin main
+
 Output
-#### Public GitHub repository created
-#### README.md added
-#### hello.py added
+`-` Public GitHub repository created
+`-` README.md added
+`-` hello.py added
+
 Initial Git commit pushed to GitHub
 
-### git remote add origin https://github.com/Jiss-Varghese/devops-intern-final.git
-### git remote -v
-### git add README.md hello.py
-### git commit -m "Add initial project files"
-### git branch -M main
-### git push -u origin main
+#### git remote add origin https://github.com/Jiss-Varghese/devops-intern-final.git
+#### git remote -v
+#### git add README.md hello.py
+#### git commit -m "Add initial project files"
+#### git branch -M main
+#### git push -u origin main
 
 
 ## Linux & Scripting Basics
