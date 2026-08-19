@@ -127,16 +127,14 @@ df -h<br>
  Output<br>
 **User:** jiss<br>
 **Date:** Mon Aug 18 19:00:00 SGT 2026
+**Disk Usage:**  (screenshot attached)
 
-Disk Usage:
-Filesystem      Size   Used  Avail Capacity
-...
 Output
-Bash system-information script created
-Script made executable
-System information successfully displayed
+`-`Bash system-information script created<br>
+`-`Script made executable<br>
+`-`System information successfully displayed
 
-Docker Basics
+## Docker Basics
 
 
 Containerize the Python application using Docker.
