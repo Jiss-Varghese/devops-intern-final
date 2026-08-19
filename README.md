@@ -206,10 +206,10 @@ Check the Workflow
 
 After pushing code:<br>
 
-Open the GitHub repository<br>
-Select Actions<br>
-Select the CI workflow<br>
-open the workflow and look for: Run hello.py <br>
+##### Open the GitHub repository<br>
+##### Select Actions<br>
+##### Select the CI workflow<br>
+##### open the workflow and look for: Run hello.py <br>
  
  Output<br> 
 Hello,DevOps!
