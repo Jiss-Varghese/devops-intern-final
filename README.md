@@ -3,7 +3,7 @@
 https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml/badge.svg
 
 
-**Name:** Jiss Varghese
+**Name:** Jiss Varghese<br>
 **Date:** 18 August 2026
 Repository: devops-intern-final
 
