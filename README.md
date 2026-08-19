@@ -211,7 +211,7 @@ Select Actions<br>
 Select the CI workflow<br>
 open the workflow and look for: Run hello.py <br>
  
- Output 
+ Output<br> 
 Hello,DevOps!
 
 Check the workflow run.
@@ -226,13 +226,13 @@ Output<br>
 
 Commit and push the workflow
 
-git add .github/workflows/ci.yml
-git commit -m "Add GitHub Actions CI pipeline"
+git add .github/workflows/ci.yml<br>
+git commit -m "Add GitHub Actions CI pipeline"<br>
 git push
 
 
-git add README.md
-git commit -m "Add CI status badge to README.md"
+git add README.md<br>
+git commit -m "Add CI status badge to README.md"<br>
 git push
 
 
