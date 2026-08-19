@@ -226,14 +226,14 @@ Output<br>
 
 Commit and push the workflow
 
-git add .github/workflows/ci.yml<br>
-git commit -m "Add GitHub Actions CI pipeline"<br>
-git push
+#### git add .github/workflows/ci.yml<br>
+#### git commit -m "Add GitHub Actions CI pipeline"<br>
+#### git push
 
 
-git add README.md<br>
-git commit -m "Add CI status badge to README.md"<br>
-git push
+#### git add README.md<br>
+#### git commit -m "Add CI status badge to README.md"<br>
+#### git push
 
 
 
