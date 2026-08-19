@@ -123,6 +123,7 @@ The script uses Linux/macOS commands such as:
 whoami<br>
 date<br>
 df -h<br>
+ 
  Output<br>
 **User:** jiss<br>
 **Date:** Mon Aug 18 19:00:00 SGT 2026
