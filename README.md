@@ -120,15 +120,12 @@ The script displays:<br>
 
 The script uses Linux/macOS commands such as:
 
-whoami
-date
-df -h
+whoami<br>
+date<br>
+df -h<br>
  Output
-User:
-jiss
-
-Date:
-Mon Aug 18 19:00:00 SGT 2026
+**User:**jiss
+**Date:** Mon Aug 18 19:00:00 SGT 2026
 
 Disk Usage:
 Filesystem      Size   Used  Avail Capacity
