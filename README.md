@@ -19,7 +19,7 @@ Docker
 CI/CD with GitHub Actions
 Container Deployment with Nomad
 Monitoring with Grafana Loki and Grafana Alloy
-
+''' text
 DevOps Workflow
 GitHub
    ↓
@@ -32,10 +32,11 @@ GitHub Actions CI/CD
 Nomad Deployment
    ↓
 Grafana Loki + Alloy Monitoring
+'''
 Project Structure
 
 The final repository is  containing  the following structure:
-
+''' text
 devops-intern-final/
 │
 ├── README.md
@@ -55,7 +56,7 @@ devops-intern-final/
 └── monitoring/
     ├── loki-config.yml
     └── alloy-config.alloy
-
+'''
 Step 1 — Git & GitHub Setup
 
 
@@ -260,6 +261,194 @@ git push
 git add README.md
 git commit -m "Add CI status badge to README.md"
 git push
+
+
+
+Nomad pending
+
+
+Create monitoring directory
+
+
+mkdir monitoring
+
+Create Loki configuration
+
+vim monitoring/loki-config.yml
+
+auth_enabled: false
+
+server:
+  http_listen_port: 3100
+
+common:
+  path_prefix: /loki
+  replication_factor: 1
+
+  ring:
+    kvstore:
+      store: inmemory
+
+  storage:
+    filesystem:
+      chunks_directory: /loki/chunks
+      rules_directory: /loki/rules
+
+schema_config:
+  configs:
+    - from: 2024-01-01
+      store: tsdb
+      object_store: filesystem
+      schema: v13
+      index:
+        prefix: index_
+        period: 24h
+
+
+       Start Loki
+
+        docker run -d \
+  --name loki \
+  -p 3100:3100 \
+  -v "$(pwd)/monitoring/loki-config.yml:/etc/loki/config.yml" \
+  grafana/loki:latest \
+  -config.file=/etc/loki/config.yml
+
+  docker ps
+
+  grafana/loki
+
+  Check Loki:
+  curl http://localhost:3100/ready
+  ready
+
+  run again:
+  will get ready
+  Check Loki metrics:
+curl http://localhost:3100/metrics
+
+Send a test log to Loki
+
+curl -X POST http://localhost:3100/loki/api/v1/push \
+  -H "Content-Type: application/json" \
+  --data-raw '{
+    "streams": [
+      {
+        "stream": {
+          "job": "hello-devops"
+        },
+        "values": [
+          ["'$(date +%s%N)'", "Hello from DevOps monitoring"]
+        ]
+      }
+    ]
+  }'
+
+  Query the log
+
+  curl -G -s "http://localhost:3100/loki/api/v1/query_range" \
+  --data-urlencode 'query={job="hello-devops"}'
+Hello from DevOps monitoring
+
+  Create loki_setup.txt
+
+
+vim monitoring/loki_setup.txt
+Grafana Loki Monitoring Setup
+=============================
+
+1. Loki Configuration
+---------------------
+
+Loki configuration is stored in:
+
+monitoring/loki-config.yml
+
+
+2. Start Loki
+-------------
+
+Loki was started locally using Docker:
+
+docker run -d \
+  --name loki \
+  -p 3100:3100 \
+  -v "$(pwd)/monitoring/loki-config.yml:/etc/loki/config.yml" \
+  grafana/loki:latest \
+  -config.file=/etc/loki/config.yml
+
+
+3. Check Loki
+-------------
+
+The Loki readiness endpoint was checked using:
+
+curl http://localhost:3100/ready
+
+
+4. Send a Test Log
+------------------
+
+A test log was sent to Loki using the Loki push API.
+
+
+5. View Logs
+------------
+
+Logs can be queried using:
+
+curl -G -s "http://localhost:3100/loki/api/v1/query_range" \
+  --data-urlencode 'query={job="hello-devops"}'
+
+
+6. Example Log
+--------------
+
+Hello from DevOps monitoring
+
+
+7. Docker Container
+-------------------
+
+The Loki container can be checked with:
+
+docker ps
+
+and its logs can be viewed with:
+
+docker logs loki
+
+Add Monitoring to README
+
+## 6. Monitoring with Grafana Loki
+
+Grafana Loki is used for centralized log collection and querying.
+
+### Start Loki
+
+```bash
+docker run -d \
+  --name loki \
+  -p 3100:3100 \
+  -v "$(pwd)/monitoring/loki-config.yml:/etc/loki/config.yml" \
+  grafana/loki:latest \
+  -config.file=/etc/loki/config.yml
+
+  Check Loki
+
+  curl http://localhost:3100/ready
+  ready
+
+Want to see ONLY the message:
+
+
+Run this command:
+curl -G -s "http://localhost:3100/loki/api/v1/query_range" \
+  --data-urlencode 'query={job="hello-devops"}' \
+  | grep -o 'Hello from DevOps monitoring'
+
+
+  
 
 
 
