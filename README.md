@@ -108,20 +108,15 @@ Initial Git commit pushed to GitHub
 
 Create a Bash script that displays basic system information.
 
-The script is located at:
+**The script is located at:** scripts/sysinfo.sh
 
-scripts/sysinfo.sh
-
-The script displays:
-
-Current username
-Current date and time
+The script displays:<br>
+`-`Current username<br>
+Current date and time<br>
 Disk usage
-Make the Script Executable
-chmod +x scripts/sysinfo.sh
+**Make the Script Executable:** chmod +x scripts/sysinfo.sh
 
-Run the Script
-./scripts/sysinfo.sh
+**Run the Script:** ./scripts/sysinfo.sh
 
 The script uses Linux/macOS commands such as:
 
