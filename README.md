@@ -195,9 +195,7 @@ The workflow performs the following steps:
 GitHub Actions Workflow
 
 **The workflow uses:** actions/checkout
-**actions/setup-python:** 
-
-**Python version:** 3.12
+**actions/setup-python:** Python version 3.12
 
 Trigger
 
@@ -217,10 +215,10 @@ Check the workflow run.
 
 A successful workflow indicates that the application passes the CI step.
 
-Output
-GitHub Actions workflow created
-Automated testing/execution configured
-CI pipeline successfully executed on GitHub
+Output<br>
+`-`GitHub Actions workflow created<br>
+`-`Automated testing/execution configured<br>
+`-`CI pipeline successfully executed on GitHub
 
 
 Commit and push the workflow
