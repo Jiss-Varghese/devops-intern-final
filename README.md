@@ -148,7 +148,7 @@ Build the Docker Image
 
 **From the project root:** docker build -t hello-devops .
 
-**Check the image:** docker images
+**Check the image:** docker images<br>
 **Run the Container:** docker run --rm hello-devops
 
  Output
