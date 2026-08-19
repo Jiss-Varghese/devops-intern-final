@@ -112,8 +112,8 @@ Create a Bash script that displays basic system information.
 
 The script displays:<br>
 `-`Current username<br>
-Current date and time<br>
-Disk usage
+`-`Current date and time<br>
+`-`Disk usage<br>
 **Make the Script Executable:** chmod +x scripts/sysinfo.sh
 
 **Run the Script:** ./scripts/sysinfo.sh
