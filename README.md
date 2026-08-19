@@ -139,54 +139,41 @@ Output<br>
 
 Containerize the Python application using Docker.
 
-The Docker configuration is stored in:
+**The Docker configuration is stored in:** Dockerfile
 
-Dockerfile
-Dockerfile
 
 The Docker image uses Python as its base image and runs hello.py.
 
 Build the Docker Image
 
-From the project root:
+**From the project root:** docker build -t hello-devops .
 
-docker build -t hello-devops .
+**Check the image:** docker images
+**Run the Container:** docker run --rm hello-devops
 
-Check the image:
-
-docker images
-Run the Container
-docker run --rm hello-devops
-
- output:
+ Output
 
 Hello, DevOps!
+
 Useful Docker Commands
 
-Check running containers:
+**Check running containers:** docker ps
 
-docker ps
+**Check all containers:** docker ps -a
 
-Check all containers:
+**Check images:** docker images
 
-docker ps -a
+**Remove an image:** docker rmi hello-devops
 
-Check images:
+Output<br>
+`-`Dockerfile created<br>
+`-`Docker image successfully built<br>
+`-`Python application successfully executed inside a container
 
-docker images
-
-Remove an image:
-
-docker rmi hello-devops
-Output
-Dockerfile created
-Docker image successfully built
-Python application successfully executed inside a container
-
-git status
-git add Dockerfile README.md
-git commit -m "Add Docker containerization"
-git push
+#### git status
+#### git add Dockerfile README.md
+#### git commit -m "Add Docker containerization"
+#### git push
 
 
 CI/CD with GitHub Actions
