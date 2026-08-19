@@ -7,7 +7,7 @@ Name: Jiss Varghese
 Date: 18 August 2026
 Repository: devops-intern-final
 
-Project Overview
+#Project Overview#
 
 This project demonstrates a complete DevOps workflow using open-source tools and practices.
 
@@ -19,7 +19,7 @@ Docker
 CI/CD with GitHub Actions
 Container Deployment with Nomad
 Monitoring with Grafana Loki and Grafana Alloy
-''' text
+``` text
 DevOps Workflow
 GitHub
    ↓
@@ -32,11 +32,11 @@ GitHub Actions CI/CD
 Nomad Deployment
    ↓
 Grafana Loki + Alloy Monitoring
-'''
+```
 Project Structure
 
 The final repository is  containing  the following structure:
-''' text
+```text
 devops-intern-final/
 │
 ├── README.md
@@ -56,7 +56,7 @@ devops-intern-final/
 └── monitoring/
     ├── loki-config.yml
     └── alloy-config.alloy
-'''
+```
 Step 1 — Git & GitHub Setup
 
 
