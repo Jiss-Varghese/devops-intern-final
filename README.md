@@ -89,7 +89,7 @@ Git Commands Used
 #### git remote add origin <https://github.com/Jiss-Varghese/devops-intern-final.git>
 #### git push -u origin main
 
-Output
+Output<br>
 `-` Public GitHub repository created<br>
 `-` README.md added<br>
 `-` hello.py added
