@@ -11,7 +11,7 @@ https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml/ba
 
 This project demonstrates a complete DevOps workflow using open-source tools and practices.
 
-## The workflow covers:
+ The workflow covers:
 
 ## Git & GitHub
 ## Linux & Bash Scripting
