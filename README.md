@@ -254,13 +254,13 @@ Deploy the Docker container using HashiCorp Nomad.
 
 **Nomad Installation commands:**<br>
  
- brew tap hashicorp/tap
- brew install hashicorp/tap/nomad
- nomad version
+ brew tap hashicorp/tap<br>
+ brew install hashicorp/tap/nomad<br>
+ nomad version<br>
 
- Create a directory 
-   **name:** mkdir nomad
-    touch nomad/hello.nomad
+ Create a directory<br> 
+   **name:** mkdir nomad<br>
+    touch nomad/hello.nomad<br>
     vim nomad/hello.nomad
           
           Nomad Job
