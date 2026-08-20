@@ -263,13 +263,13 @@ Deploy the Docker container using HashiCorp Nomad.
     touch nomad/hello.nomad<br>
     vim nomad/hello.nomad
           
- Nomad Job
-job "hello-devops" {
-  datacenters = ["dc1"]
+ Nomad Job<br>
+    job "hello-devops" {
+    datacenters = ["dc1"]
 
-  type = "service"
+    type = "service"
 
-  group "hello" {
+    group "hello" {
     count = 1
 
     task "hello" {
