@@ -349,12 +349,12 @@ For the Nomad deployment, the Docker image is stored in a local Docker registry.
 **Start the Registry:** docker run -d \
   -p 5001:5000 \
   --name registry \
-  registry:2
-**Tag the Image:** docker tag hello-devops:latest localhost:5001/hello-devops:latest
-**Push the Image:** docker push localhost:5001/hello-devops:latest
-**Verify the Registry:** curl http://localhost:5001/v2/hello-devops/tags/list
-nomad job stop hello-devops
-nomad job run nomad/hello.nomad
+  registry:2<br>
+**Tag the Image:** docker tag hello-devops:latest localhost:5001/hello-devops:latest<br>
+**Push the Image:** docker push localhost:5001/hello-devops:latest<br>
+**Verify the Registry:** curl http://localhost:5001/v2/hello-devops/tags/list<br>
+nomad job stop hello-devops<br>
+nomad job run nomad/hello.nomad<br>
 
 Healthy : 1
 
