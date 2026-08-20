@@ -286,8 +286,8 @@ Deploy the Docker container using HashiCorp Nomad.
         cpu    = 100
         memory = 128
       }
-    }
-  }
+      }
+      }
   }
 
 
