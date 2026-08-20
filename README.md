@@ -360,7 +360,8 @@ For the Nomad deployment, the Docker image is stored in a local Docker registry.
 nomad job stop hello-devops<br>
 nomad job run nomad/hello.nomad<br>
 
-Healthy : 1
+Output
+**Healthy :** 1
 
 #### git add nomad/hello.nomad README.md
 #### git commit -m "Add Nomad deployment job"
