@@ -358,6 +358,9 @@ nomad job run nomad/hello.nomad<br>
 
 Healthy : 1
 
+#### git add nomad/hello.nomad README.md
+#### git commit -m "Add Nomad deployment job"
+#### git push
 
 
 
