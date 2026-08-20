@@ -301,16 +301,16 @@ nomad job run nomad/hello.nomad<br>
 
 Unhealthy : 1
 
-Useful Commands for troubleshooting
+Useful Commands for troubleshooting<br>
 
-nomad job status hello-devops
-docker images | grep hello-devops
-docker run --rm hello-devops:latest
-nomad alloc status (ID)
+nomad job status hello-devops<br>
+docker images | grep hello-devops<br>
+docker run --rm hello-devops:latest<br>
+nomad alloc status (ID)<br>
 
 vim nomad/hello.nomad
 
-                   job "hello-devops" {
+  job "hello-devops" {
   datacenters = ["dc1"]
 
   type = "service"
