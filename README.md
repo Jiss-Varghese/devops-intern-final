@@ -291,13 +291,13 @@ job "hello-devops" {
 
 
 
-docker build -t hello-devops .
-docker images
-nomad agent -dev
+docker build -t hello-devops .<br>
+docker images<br>
+nomad agent -dev<br>
 
-nomad status
-nomad job validate nomad/hello.nomad
-nomad job run nomad/hello.nomad
+nomad status<br>
+nomad job validate nomad/hello.nomad<br>
+nomad job run nomad/hello.nomad<br>
 
 Unhealthy : 1
 
