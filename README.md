@@ -311,12 +311,12 @@ nomad alloc status (ID)<br>
 
 vim nomad/hello.nomad
 
-job "hello-devops" {
-  datacenters = ["dc1"]
+    job "hello-devops" {
+    datacenters = ["dc1"]
 
-  type = "service"
+    type = "service"
 
-  group "hello" {
+    group "hello" {
     count = 1
 
     task "hello" {
