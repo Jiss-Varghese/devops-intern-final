@@ -252,8 +252,113 @@ Deploy the Docker container using HashiCorp Nomad.
 `-`100 CPU units<br>
 `-`128 MB memory
 
+**Nomad Installation commands:**<br>
+ 
+ brew tap hashicorp/tap
+ brew install hashicorp/tap/nomad
+ nomad version
 
-Create monitoring directory
+ Create a directory 
+   **name:** mkdir nomad
+    touch nomad/hello.nomad
+    vim nomad/hello.nomad
+          
+          Nomad Job
+job "hello-devops" {
+  datacenters = ["dc1"]
+
+  type = "service"
+
+  group "hello" {
+    count = 1
+
+    task "hello" {
+      driver = "docker"
+
+      config {
+        image = "localhost:5001/hello-devops:latest"
+
+        
+      }
+
+      resources {
+        cpu    = 100
+        memory = 128
+      }
+    }
+  }
+}
+
+
+
+docker build -t hello-devops .
+docker images
+nomad agent -dev
+
+nomad status
+nomad job validate nomad/hello.nomad
+nomad job run nomad/hello.nomad
+
+Unhealthy : 1
+
+Useful Commands for troubleshooting
+
+nomad job status hello-devops
+docker images | grep hello-devops
+docker run --rm hello-devops:latest
+nomad alloc status (ID)
+
+vim nomad/hello.nomad
+
+                   job "hello-devops" {
+  datacenters = ["dc1"]
+
+  type = "service"
+
+  group "hello" {
+    count = 1
+
+    task "hello" {
+      driver = "docker"
+
+      config {
+        image = "localhost:5001/hello-devops:latest"
+        command = "python"
+        args = [
+          "-u",
+          "-c",
+          "import time; print('Hello, DevOps!', flush=True); time.sleep(3600)"
+        ]
+      }
+
+      resources {
+        cpu    = 100
+        memory = 128
+      }
+    }
+  }
+}  
+
+
+Docker Local Registry
+
+For the Nomad deployment, the Docker image is stored in a local Docker registry.
+
+**Start the Registry:** docker run -d \
+  -p 5001:5000 \
+  --name registry \
+  registry:2
+**Tag the Image:** docker tag hello-devops:latest localhost:5001/hello-devops:latest
+**Push the Image:** docker push localhost:5001/hello-devops:latest
+**Verify the Registry:** curl http://localhost:5001/v2/hello-devops/tags/list
+nomad job stop hello-devops
+nomad job run nomad/hello.nomad
+
+Healthy : 1
+
+
+
+
 
 
 mkdir monitoring
