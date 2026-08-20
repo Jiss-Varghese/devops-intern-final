@@ -327,11 +327,11 @@ vim nomad/hello.nomad
         ]
       }
 
-      resources {
-        cpu    = 100
-        memory = 128
-      }
-    }
+  resources {
+  cpu    = 100
+  memory = 128
+  }
+  }
   }
 }  
 
