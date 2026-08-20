@@ -263,27 +263,27 @@ Deploy the Docker container using HashiCorp Nomad.
     touch nomad/hello.nomad<br>
     vim nomad/hello.nomad
           
-          Nomad Job
+    Nomad Job
 job "hello-devops" {
-  datacenters = ["dc1"]
+datacenters = ["dc1"]
 
-  type = "service"
+type = "service"
 
-  group "hello" {
-    count = 1
+group "hello" {
+count = 1
 
-    task "hello" {
-      driver = "docker"
+task "hello" {
+driver = "docker"
 
-      config {
-        image = "localhost:5001/hello-devops:latest"
+config {
+  image = "localhost:5001/hello-devops:latest"
 
         
       }
 
-      resources {
-        cpu    = 100
-        memory = 128
+  resources {
+  cpu    = 100
+  memory = 128
       }
     }
   }
