@@ -237,7 +237,20 @@ Commit and push the workflow
 
 
 
-Nomad pending
+## Step 5 - Job Deployment with Nomad
+
+
+Deploy the Docker container using HashiCorp Nomad.
+
+**The Nomad job configuration is located at:** nomad/hello.nomad
+
+**The job uses:**<br>
+
+`-`Job type: service<br>
+`-`Docker driver<br>
+`-`1 task allocation<br>
+`-`100 CPU units<br>
+`-`128 MB memory
 
 
 Create monitoring directory
