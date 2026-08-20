@@ -288,7 +288,7 @@ Deploy the Docker container using HashiCorp Nomad.
       }
       }
       }
-  }
+      }
 
 
 
@@ -311,31 +311,35 @@ nomad alloc status (ID)<br>
 
 vim nomad/hello.nomad
 
-  job "hello-devops" {
+job "hello-devops" {
   datacenters = ["dc1"]
 
   type = "service"
 
   group "hello" {
-  count = 1
+    count = 1
 
-  task "hello" {
-  driver = "docker"
+    task "hello" {
+      driver = "docker"
 
-  config {
-  image = "localhost:5001/hello-devops:latest"
-  command = "python"
-  args = ["-u","-c","import time; print('Hello, DevOps!', flush=True); time.sleep(3600)"
+      config {
+        image = "localhost:5001/hello-devops:latest"
+        command = "python"
+        args = [
+          "-u",
+          "-c",
+          "import time; print('Hello, DevOps!', flush=True); time.sleep(3600)"
         ]
       }
 
-  resources {
-  cpu    = 100
-  memory = 128
-  }
-  }
-  }
-}  
+      resources {
+        cpu    = 100
+        memory = 128
+      }
+      }
+      }
+      }
+  
 
 
 Docker Local Registry
