@@ -528,7 +528,7 @@ First run Docker application:
 
 docker run -d \
   --name hello-logs \
-  hello-devops:latest \
+  localhost:5001/hello-devops:latest \
   sh -c "echo 'Hello from container to Loki'; sleep 3600"
 
   check:
@@ -555,9 +555,9 @@ Query Loki
 
 Run:
 
+curl -G -s http://localhost:3100/loki/api/v1/query \
+  --data-urlencode 'query={job="hello-devops"} |= "Hello from container to Loki"'
 
-curl -G 'http://localhost:3100/loki/api/v1/query' \
-  --data-urlencode 'query={container="hello-logs"}'
 
 
   should see:
@@ -565,10 +565,7 @@ curl -G 'http://localhost:3100/loki/api/v1/query' \
   Hello from container to Loki
 
 
-can also query specifically:
 
-curl -G 'http://localhost:3100/loki/api/v1/query' \
-  --data-urlencode 'query={container="hello-logs"} |= "Hello from container to Loki"'
 
 
 Create loki_setup.txt
@@ -662,6 +659,7 @@ Grafana Alloy
       v
 Grafana Loki
 
+:wq!
 
 
 Check your monitoring files
@@ -689,6 +687,12 @@ Then:
 
 git push
 
+IF you make changes in README.md after that save it ,press command+s then,
+git status
+git add README.md
+git commit -m "Update README"
+git push origin main
+git status
 
 
 
