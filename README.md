@@ -450,8 +450,6 @@ Create Alloy configuration
 
 vim monitoring/alloy-config.alloy 
 
-Run:
-
 discovery.docker "containers" {
   host = "unix:///var/run/docker.sock"
 }
