@@ -381,14 +381,14 @@ Grafana Alloy
       │ Loki API
       ▼
 Grafana Loki
-
+```
 Nomad is running your application container, while Docker/Alloy collects its logs.
 
 Start Loki
 
 Open another Terminal.
 
-Run:
+Run:<br>
 
 
 
@@ -658,7 +658,7 @@ Grafana Alloy
       | Loki API
       v
 Grafana Loki
-
+```
 :wq!
 
 
