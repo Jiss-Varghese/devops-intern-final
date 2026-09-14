@@ -1,0 +1,80 @@
+
+Grafana Loki Monitoring Setup
+=============================
+
+1. Start Loki
+
+Loki was started locally using Docker:
+
+docker run -d \
+  --name loki \
+  -p 3100:3100 \
+  grafana/loki:latest \
+  -config.file=/etc/loki/local-config.yaml
+
+2. Verify Loki
+
+The Loki readiness endpoint was checked using:
+
+curl http://localhost:3100/ready
+
+Expected result:
+
+ready
+
+3. Start Grafana Alloy
+
+Grafana Alloy was used to collect Docker container logs and forward them to Loki.
+
+The Alloy configuration is stored in:
+
+monitoring/alloy-config.alloy
+
+4. Run Alloy
+
+Alloy was started using Docker with access to the Docker socket:
+
+docker run -d \
+  --name grafana-alloy \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  -v "$(pwd)/monitoring/alloy-config.alloy:/etc/alloy/config.alloy:ro" \
+  grafana/alloy:latest \
+  run /etc/alloy/config.alloy
+
+5. Generate a test log
+
+A test Docker container was started with:
+
+docker run -d \
+  --name hello-logs \
+  localhost:5001/hello-devops:latest \
+  sh -c "echo 'Hello from container to Loki'; sleep 3600"
+
+The log was verified with:
+
+docker logs hello-logs
+
+Expected output:
+
+Hello from container to Loki
+
+6. Query Loki
+
+The logs can be queried with:
+
+curl -G -s http://localhost:3100/loki/api/v1/query_range \
+  --data-urlencode 'query={job="hello-devops"} |= "Hello from container to Loki"' \
+  --data-urlencode 'limit=100'
+
+7. Monitoring Flow
+
+Docker container
+      |
+      | container logs
+      v
+Grafana Alloy
+      |
+      | Loki API
+      v
+Grafana Loki
+
