@@ -664,7 +664,7 @@ ls -l monitoring/
 
 should have:
 
-alloy-config.alloy
+alloy-config.alloy<br>
 loki_setup.txt
 
 Commit monitoring
