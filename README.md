@@ -277,11 +277,7 @@ nomad job run nomad/hello.nomad<br>
 
 
 
-Useful Commands for troubleshooting<br>
 
-nomad job status hello-devops<br>
-docker images | grep hello-devops<br>
-docker run --rm hello-devops:latest<br>
 nomad alloc status (ID)<br>
 
 vim nomad/hello.nomad
