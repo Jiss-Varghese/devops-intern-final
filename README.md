@@ -371,7 +371,7 @@ Output<br>
 ## Step 6 — Monitoring with Grafana Loki
 
 The architecture will be:
-
+``` text
 Docker container
       │
       │ logs
@@ -648,7 +648,7 @@ The logs can be queried with:
   --data-urlencode 'limit=100'
 
 7. Monitoring Flow
-
+``` text
 Docker container
       |
       | container logs
