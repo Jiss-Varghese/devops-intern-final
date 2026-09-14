@@ -573,9 +573,11 @@ curl -G 'http://localhost:3100/loki/api/v1/query' \
 
 Create loki_setup.txt
 
+
+vim monitoring/loki_setup.txt
+
 Run:
 
-cat > monitoring/loki_setup.txt <<'EOF'
 Grafana Loki Monitoring Setup
 =============================
 
