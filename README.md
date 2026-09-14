@@ -212,7 +212,7 @@ After pushing code:<br>
 ##### open the workflow and look for: Run hello.py <br>
  
  Output<br> 
-Hello,DevOps!
+Hello, DevOps!
 
 Check the workflow run.
 
