@@ -469,8 +469,10 @@ discovery.relabel "containers" {
   }
 
   rule {
-    target_label = "job"
-    replacement  = "hello-devops"
+    source_labels = ["__meta_docker_container_name"]
+    regex         = "/hello-logs"
+    target_label  = "job"
+    replacement   = "hello-devops"
   }
 }
 
