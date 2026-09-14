@@ -573,10 +573,7 @@ Create loki_setup.txt
 
 vim monitoring/loki_setup.txt
 
-Run:
-
 Grafana Loki Monitoring Setup
-===
 
 1. Start Loki
 
