@@ -687,11 +687,11 @@ Then:
 
 git push
 
-IF you make changes in README.md after that save it ,press command+s then,
-git status
-git add README.md
-git commit -m "Update README"
-git push origin main
+IF you make changes in README.md after that save it ,press command+s then,<br>
+git status<br>
+git add README.md<br>
+git commit -m "Update README"<br>
+git push origin main<br>
 git status
 
 
