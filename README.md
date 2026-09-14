@@ -688,6 +688,6 @@ git commit -m "Add Grafana Loki monitoring configuration"
 
 Then:
 
-git push
+
 
 
