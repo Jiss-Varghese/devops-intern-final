@@ -15,7 +15,7 @@ job "hello-devops" {
       config {
         image   = "localhost:5001/hello-devops:latest"
         command = "python"
-        args    = ["-u", "-c", "import time; print('Hello,DevOps!', flush=True); time.sleep(3600)"]
+        args    = ["-u", "-c", "import time; print('Hello, DevOps!', flush=True); time.sleep(3600)"]
  }
 
       resources {
