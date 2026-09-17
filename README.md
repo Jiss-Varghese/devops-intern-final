@@ -450,9 +450,9 @@ curl -G 'http://localhost:3100/loki/api/v1/query_range' \
   --data-urlencode 'limit=20'
 
 
-Output: Hello from container to Loki (Screenshot attached)
-Create loki_setup.txt
-touch monitoring/loki_setup.txt
+Output: Hello from container to Loki (Screenshot attached)<br>
+Create loki_setup.txt<br>
+touch monitoring/loki_setup.txt<br>
 code monitoring/loki_setup.txt
   ```text
 
