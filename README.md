@@ -112,7 +112,7 @@ docker --version<br>
 touch Dockerfile
 
 code Dockerfile
-
+```text
  FROM python:3.12-slim
 
 WORKDIR /app
@@ -120,7 +120,7 @@ WORKDIR /app
 COPY hello.py .
 
 CMD ["python", "hello.py"]
-
+```
 #### Build the Docker image
 
 docker build -t hello-devops:latest .
