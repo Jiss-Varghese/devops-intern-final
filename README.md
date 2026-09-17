@@ -83,7 +83,9 @@ code .  (Entire project open in vscode)
 
 mkdir scripts<br>
 touch scripts/sysinfo.sh<br>
-code  scripts/sysinfo.sh
+code  scripts/sysinfo.sh<br>
+
+```text
   #!/bin/bash
 
 echo "Current user:"<br>
@@ -94,7 +96,7 @@ date
 
 echo "Disk usage:"<br>
 df -h
-
+```
 #### Make the script executable<br>
 chmod +x scripts/sysinfo.sh<br>
 ls -l scripts/sysinfo.sh<br>
