@@ -533,6 +533,6 @@ The query searches Loki for logs from the hello-devops job containing:
 Hello from container to Loki
 
 ```
-git add monitoring/ README.md
-git commit -m "Add Loki monitoring configuration"
+git add monitoring/ README.md<br>
+git commit -m "Add Loki monitoring configuration"<br>
 git push
