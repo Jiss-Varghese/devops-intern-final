@@ -153,6 +153,8 @@ Create the directories:<br>
 mkdir -p .github/workflows<br>
 touch .github/workflows/ci.yml<br>
 code .github/workflows/ci.yml
+
+```text
   
     name: CI
 
@@ -175,7 +177,7 @@ code .github/workflows/ci.yml
       - name: Run application
         run: python hello.py
 
-        
+```
 Commit and push CI
 
 git add .github/workflows/ci.yml README.md
