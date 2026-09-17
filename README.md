@@ -1,6 +1,6 @@
 # DevOps Intern Final Assessment
 
-GitHub Actions badge
+## GitHub Actions badge
 
 [CI] 
 
