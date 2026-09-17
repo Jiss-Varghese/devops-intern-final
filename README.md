@@ -175,6 +175,6 @@ jobs:
         run: python hello.py
 Commit and push CI
 
-git add .github/workflows/ci.yml
+git add .github/workflows/ci.yml README.md
 git commit -m "Add GitHub Actions CI workflow"
 git push
