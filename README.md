@@ -36,40 +36,40 @@ devops-intern-final/
 └── README.md
 ```
 
-Create the GitHub repository<br>
-Name: devops-intern-final<br>
+#### Create the GitHub repository<br>
+**Name:** devops-intern-final<br>
  make it public<br>
-STEP 1 — Git & GitHub Setup
+## STEP 1 — Git & GitHub Setup
 
 git --version<br>
 python3 --version<br>
-Create the project directory<br>
+#### Create the project directory<br>
 cd ~<br>
 mkdir devops-intern-final<br>
 cd devops-intern-final<br>
 pwd<br>
-Initialize Git<br>
+#### Initialize Git<br>
 git init<br>
 ls -la<br>
-Create hello.py<br>
+#### Create hello.py<br>
 code hello.py<br>
    print("Hello, DevOps!")
 
-Test Python<br>
+#### Test Python<br>
  python3 hello.py<br>
 Output: Hello, DevOps!    (Screenshot attached-Python Output)
 
-Create the initial README<br>
+#### Create the initial README<br>
 touch README.md<br>
 code README.md<br>
 
-Check Git status
+#### Check Git status
 git status<br>
 git add README.md hello.py<br>
 git add .<br>
 git commit -m "Initial project setup"
 
-Connect local Git to GitHub
+#### Connect local Git to GitHub
 
 git remote add origin https://github.com/Jiss-Varghese/devops-intern-final.git
 
@@ -79,7 +79,7 @@ git push -u origin main<br>
 git push<br>
 code .  (Entire project open in vscode)
 
-Step 2 — Linux & Shell Scripting
+## Step 2 — Linux & Shell Scripting
 
 mkdir scripts<br>
 touch scripts/sysinfo.sh<br>
@@ -95,7 +95,7 @@ date
 echo "Disk usage:"<br>
 df -h
 
-Make the script executable<br>
+#### Make the script executable<br>
 chmod +x scripts/sysinfo.sh<br>
 ls -l scripts/sysinfo.sh<br>
 ./scripts/sysinfo.sh
@@ -106,7 +106,7 @@ git add scripts/sysinfo.sh<br>
 git commit -m "Add Linux system information script"<br>
 git push
 
-Step 3 — Docker
+## Step 3 — Docker
 
 docker --version<br>
 touch Dockerfile
@@ -121,35 +121,35 @@ COPY hello.py .
 
 CMD ["python", "hello.py"]
 
-Build the Docker image
+#### Build the Docker image
 
 docker build -t hello-devops:latest .
 
-Check image<br>
+#### Check image<br>
 docker images<br>
-Run the container<br>
+#### Run the container<br>
 docker run --rm hello-devops:latest<br>
 Output: Hello, DevOps!  (Screenshot attached-Docker Output)<br>
 Why --rm?<br>
 means Docker automatically removes the container after it exits.<br>
-Check containers
+#### Check containers
 
 docker ps <br>
  This shows only currently running containers 
  To see stopped containers:
 
  docker ps -a<br>
-Commit Docker
+#### Commit Docker
 
 git add Dockerfile<br>
 git commit -m "Add Docker containerization"<br>
 git push<br>
 git status
 
-Step 4 — GitHub Actions CI/CD<br>
+## Step 4 — GitHub Actions CI/CD<br>
 Now we automatically test the Python program whenever code is pushed.
 
-Create the directories:<br>
+#### Create the directories:<br>
 mkdir -p .github/workflows<br>
 touch .github/workflows/ci.yml<br>
 code .github/workflows/ci.yml
@@ -178,13 +178,13 @@ code .github/workflows/ci.yml
         run: python hello.py
 
 ```
-Commit and push CI
+#### Commit and push CI
 
 git add .github/workflows/ci.yml README.md<br>
 git commit -m "Add GitHub Actions CI workflow"<br>
 git push
 
-Step 5 — Nomad
+## Step 5 — Nomad
 
 Nomad is a workload orchestrator.
 
@@ -220,24 +220,24 @@ but the Nomad environment cannot access that local image
 
 A reliable local setup is to use a local Docker registry.
 
-Start a local Docker registry
+#### Start a local Docker registry
 
 docker ps<br>
 docker run -d --name local-registry -p 5001:5000 registry:2<br>
-Tag the image
+#### Tag the image
 
-Create a registry tag:<br>
+#### Create a registry tag:<br>
 docker tag hello-devops:latest localhost:5001/hello-devops:latest
 
 docker images
 
-Push the image<br>
+#### Push the image<br>
 docker push localhost:5001/hello-devops:latest
 This uploads the image to your local registry.
 
 Now we deploy the Docker container using Nomad
 
-Create the Nomad directory
+#### Create the Nomad directory
 
 mkdir -p nomad
 
@@ -274,31 +274,31 @@ code nomad/hello.nomad<br>
 
 ```
 
-Validate the job
+#### Validate the job
 
 nomad job validate nomad/hello.nomad
 
 Output: Job validation successful
 
-Start a local Nomad agent
+#### Start a local Nomad agent
 
 nomad agent -dev
 
 keep the Terminal window open 
 And Open another Terminal window and
-Check Nomad
+#### Check Nomad
 nomad node status
 
-Run the job<br>
+#### Run the job<br>
 nomad job run nomad/hello.nomad<br>
-Check the job status<br>
+#### Check the job status<br>
 nomad job status hello-devops
 
-Check the allocation logs<br>
+#### Check the allocation logs<br>
 nomad job allocations hello-devops<br>
 nomad alloc status c03e952a
 
-view logs<br>
+#### view logs<br>
 nomad alloc logs c03e952a<br>
   Output: Hello, DevOps!
 
@@ -309,7 +309,7 @@ git push origin main<br>
 git push<br>
 git status
 
-STEP 6 — Grafana Loki Monitoring
+## STEP 6 — Grafana Loki Monitoring
 
 Grafana Loki is a log aggregation system.
 
@@ -347,10 +347,10 @@ docker logs hello-logs
 
 Output: Hello from container to Loki
 
-Install/start Grafana Alloy
+#### Install/start Grafana Alloy
 
 docker pull grafana/alloy:latest<br>
-Create the monitoring directory:<br>
+#### Create the monitoring directory:<br>
 mkdir -p monitoring<br>
 code monitoring/alloy-config.alloy
 
@@ -393,22 +393,22 @@ loki.write "local" {
 
 ```
 
-Start Alloy
+#### Start Alloy
 
 docker run -d --name grafana-alloy -v "$(pwd)/monitoring/alloy-config.alloy:/etc/alloy/config.alloy" -v /var/run/docker.sock:/var/run/docker.sock -p 12345:12345 grafana/alloy:latest run /etc/alloy/config.alloy --server.http.listen-addr=0.0.0.0:12345
 
-Check Alloy: docker ps
+**Check Alloy:** docker ps
 
  should see:
  grafana-alloy
  loki
  hello-logs
 
-Then check Alloy logs:
+#### Then check Alloy logs:
 
  docker logs grafana-alloy --tail 50
 
- Check Loki labels
+ #### Check Loki labels
 
  curl http://localhost:3100/loki/api/v1/labels
 
@@ -427,7 +427,7 @@ Then check Alloy logs:
 
 ```
 
-Check job labels
+#### Check job labels
 
 curl http://localhost:3100/loki/api/v1/label/job/values
 
@@ -443,7 +443,7 @@ should see
 
 ```
 
-Query the logs
+#### Query the logs
 
 curl -G 'http://localhost:3100/loki/api/v1/query_range' \
   --data-urlencode 'query={job="hello-devops"} |= "Hello from container to Loki"' \
@@ -451,7 +451,7 @@ curl -G 'http://localhost:3100/loki/api/v1/query_range' \
 
 
 Output: Hello from container to Loki (Screenshot attached)<br>
-Create loki_setup.txt<br>
+#### Create loki_setup.txt<br>
 touch monitoring/loki_setup.txt<br>
 code monitoring/loki_setup.txt
   ```text
