@@ -134,3 +134,34 @@ Commit Docker
 git add Dockerfile
 git commit -m "Add Docker containerization"
 git push
+git status
+
+Step 4 — GitHub Actions CI/CD
+Now we automatically test the Python program whenever code is pushed.
+
+Create the directories:
+mkdir -p .github/workflows
+touch .github/workflows/ci.yml
+code .github/workflows/ci.yml
+  
+  name: CI
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run application
+        run: python hello.py
+        
