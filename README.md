@@ -59,56 +59,56 @@ Test Python<br>
  python3 hello.py<br>
 Output: Hello, DevOps!    (Screenshot attached-Python Output)
 
-Create the initial README
-touch README.md
-code README.md
+Create the initial README<br>
+touch README.md<br>
+code README.md<br>
 
 Check Git status
-git status
-git add README.md hello.py
-git add .
+git status<br>
+git add README.md hello.py<br>
+git add .<br>
 git commit -m "Initial project setup"
 
 Connect local Git to GitHub
 
 git remote add origin https://github.com/Jiss-Varghese/devops-intern-final.git
 
-git remote -v
-git branch -M main
-git push -u origin main
-git push
+git remote -v<br>
+git branch -M main<br>
+git push -u origin main<br>
+git push<br>
 code .  (Entire project open in vscode)
 
 Step 2 — Linux & Shell Scripting
 
-mkdir scripts
-touch scripts/sysinfo.sh
+mkdir scripts<br>
+touch scripts/sysinfo.sh<br>
 code  scripts/sysinfo.sh
   #!/bin/bash
 
-echo "Current user:"
+echo "Current user:"<br>
 whoami
 
-echo "Current date:"
+echo "Current date:"<br>
 date
 
-echo "Disk usage:"
+echo "Disk usage:"<br>
 df -h
 
-Make the script executable
-chmod +x scripts/sysinfo.sh
-ls -l scripts/sysinfo.sh
+Make the script executable<br>
+chmod +x scripts/sysinfo.sh<br>
+ls -l scripts/sysinfo.sh<br>
 ./scripts/sysinfo.sh
 
 Output: (Screenshot attached-Linux Output)
 
-git add scripts/sysinfo.sh
-git commit -m "Add Linux system information script"
+git add scripts/sysinfo.sh<br>
+git commit -m "Add Linux system information script"<br>
 git push
 
 Step 3 — Docker
 
-docker --version
+docker --version<br>
 touch Dockerfile
 
 code Dockerfile
@@ -125,42 +125,42 @@ Build the Docker image
 
 docker build -t hello-devops:latest .
 
-Check image
-docker images
-Run the container
-docker run --rm hello-devops:latest
-Output: Hello, DevOps!  (Screenshot attached-Docker Output)
-Why --rm?
-means Docker automatically removes the container after it exits.
+Check image<br>
+docker images<br>
+Run the container<br>
+docker run --rm hello-devops:latest<br>
+Output: Hello, DevOps!  (Screenshot attached-Docker Output)<br>
+Why --rm?<br>
+means Docker automatically removes the container after it exits.<br>
 Check containers
 
-docker ps 
+docker ps <br>
  This shows only currently running containers 
  To see stopped containers:
 
- docker ps -a
+ docker ps -a<br>
 Commit Docker
 
-git add Dockerfile
-git commit -m "Add Docker containerization"
-git push
+git add Dockerfile<br>
+git commit -m "Add Docker containerization"<br>
+git push<br>
 git status
 
-Step 4 — GitHub Actions CI/CD
+Step 4 — GitHub Actions CI/CD<br>
 Now we automatically test the Python program whenever code is pushed.
 
-Create the directories:
-mkdir -p .github/workflows
-touch .github/workflows/ci.yml
+Create the directories:<br>
+mkdir -p .github/workflows<br>
+touch .github/workflows/ci.yml<br>
 code .github/workflows/ci.yml
   
-  name: CI
+    name: CI
 
-on:
-  push:
+    on:<br>
+    push:
 
-jobs:
-  test:
+    jobs:<br>
+    test:<br>
     runs-on: ubuntu-latest
 
     steps:
@@ -174,6 +174,8 @@ jobs:
 
       - name: Run application
         run: python hello.py
+
+        
 Commit and push CI
 
 git add .github/workflows/ci.yml README.md
