@@ -34,7 +34,7 @@ devops-intern-final/
 ├── Dockerfile
 ├── hello.py
 └── README.md
-'''
+```
 
 Create the GitHub repository
 Name: devops-intern-final
@@ -192,7 +192,7 @@ Run my Docker container as a service.
 
 The flow becomes:
 
-'''text
+```text
 Docker image
       ↓
 Nomad job
@@ -201,7 +201,7 @@ Nomad allocation
       ↓
 Docker container
 
-'''
+```
 
 nomad version
 which nomad
@@ -321,7 +321,7 @@ Loki
        ↓
 Log query
 
-'''
+```
 
 Why Alloy?
 
@@ -403,7 +403,7 @@ Then check Alloy logs:
 
  should see
 
-   '''text
+   ```text
 
    {
   "status": "success",
@@ -414,7 +414,7 @@ Then check Alloy logs:
   ]
 }
 
-'''
+```
 
 Check job labels
 
@@ -422,7 +422,7 @@ curl http://localhost:3100/loki/api/v1/label/job/values
 
 should see
 
-'''text
+```text
   {
   "status": "success",
   "data": [
@@ -430,7 +430,7 @@ should see
   ]
 }
 
-'''
+```
 
 Query the logs
 
@@ -443,7 +443,7 @@ Output: Hello from container to Loki (Screenshot attached)
 Create loki_setup.txt
 touch monitoring/loki_setup.txt
 code monitoring/loki_setup.txt
-  '''text
+  ```text
 
   Grafana Loki Monitoring Setup
 =============================
@@ -521,7 +521,7 @@ The query searches Loki for logs from the hello-devops job containing:
 
 Hello from container to Loki
 
-'''
+```
 git add monitoring/ README.md
 git commit -m "Add Loki monitoring configuration"
 git push
