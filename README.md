@@ -391,6 +391,8 @@ loki.write "local" {
   }
 }
 
+```
+
 Start Alloy
 
 docker run -d --name grafana-alloy -v "$(pwd)/monitoring/alloy-config.alloy:/etc/alloy/config.alloy" -v /var/run/docker.sock:/var/run/docker.sock -p 12345:12345 grafana/alloy:latest run /etc/alloy/config.alloy --server.http.listen-addr=0.0.0.0:12345
