@@ -9,8 +9,8 @@ https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml/ba
 https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml
 
 
-**Name: Jiss Varghese**  
-**Date: September 17, 2026**
+**Name:** Jiss Varghese  
+**Date:** September 17, 2026
 
 ## Project Description
 
@@ -232,7 +232,7 @@ docker tag hello-devops:latest localhost:5001/hello-devops:latest
 docker images
 
 #### Push the image<br>
-docker push localhost:5001/hello-devops:latest
+docker push localhost:5001/hello-devops:latest<br>
 This uploads the image to your local registry.
 
 Now we deploy the Docker container using Nomad
@@ -333,12 +333,12 @@ Log query
 Why Alloy?
 
 Grafana Alloy can collect logs and forward them to Loki.<br>
-Start Loki<br>
+#### Start Loki<br>
 docker pull grafana/loki:latest<br>
 docker run -d --name loki -p 3100:3100 grafana/loki:latest -config.file=/etc/loki/local-config.yaml
 
 Output: ready<br>
-Create a test logging container<br>
+#### Create a test logging container<br>
 We need a container that continuously produces logs.
 
 docker run -d --name hello-logs hello-devops:latest sh -c "echo 'Hello from container to Loki'; sleep 3600"
