@@ -96,5 +96,41 @@ git add scripts/sysinfo.sh
 git commit -m "Add Linux system information script"
 git push
 
+Step 3 — Docker
 
+docker --version
+touch Dockerfile
 
+code Dockerfile
+
+ FROM python:3.12-slim
+
+WORKDIR /app
+
+COPY hello.py .
+
+CMD ["python", "hello.py"]
+
+Build the Docker image
+
+docker build -t hello-devops:latest .
+
+Check image
+docker images
+Run the container
+docker run --rm hello-devops:latest
+Output: Hello, DevOps!  (Screenshot attached-Docker Output)
+Why --rm?
+means Docker automatically removes the container after it exits.
+Check containers
+
+docker ps 
+ This shows only currently running containers 
+ To see stopped containers:
+
+ docker ps -a
+Commit Docker
+
+git add Dockerfile
+git commit -m "Add Docker containerization"
+git push
