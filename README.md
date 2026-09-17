@@ -57,7 +57,7 @@ code hello.py<br>
 
 #### Test Python<br>
  python3 hello.py<br>
-Output: Hello, DevOps!    (Screenshot attached-Python Output)
+Output: Hello, DevOps!    (Screenshot attached-Python Output.png)
 
 #### Create the initial README<br>
 touch README.md<br>
@@ -129,7 +129,7 @@ docker build -t hello-devops:latest .
 docker images<br>
 #### Run the container<br>
 docker run --rm hello-devops:latest<br>
-Output: Hello, DevOps!  (Screenshot attached-Docker Output)<br>
+Output: Hello, DevOps!  (Screenshot attached-Docker Output.png)<br>
 Why --rm?<br>
 means Docker automatically removes the container after it exits.<br>
 #### Check containers
