@@ -36,9 +36,9 @@ devops-intern-final/
 └── README.md
 ```
 
-Create the GitHub repository
-Name: devops-intern-final
- make it public
+Create the GitHub repository<br>
+Name: devops-intern-final<br>
+ make it public<br>
 STEP 1 — Git & GitHub Setup
 
 git --version
