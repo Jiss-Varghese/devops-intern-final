@@ -41,22 +41,22 @@ Name: devops-intern-final<br>
  make it public<br>
 STEP 1 — Git & GitHub Setup
 
-git --version
-python3 --version
-Create the project directory
-cd ~
-mkdir devops-intern-final
-cd devops-intern-final
-pwd
-Initialize Git
-git init
-ls -la
-Create hello.py
-code hello.py
+git --version<br>
+python3 --version<br>
+Create the project directory<br>
+cd ~<br>
+mkdir devops-intern-final<br>
+cd devops-intern-final<br>
+pwd<br>
+Initialize Git<br>
+git init<br>
+ls -la<br>
+Create hello.py<br>
+code hello.py<br>
    print("Hello, DevOps!")
 
-Test Python
- python3 hello.py
+Test Python<br>
+ python3 hello.py<br>
 Output: Hello, DevOps!    (Screenshot attached-Python Output)
 
 Create the initial README
