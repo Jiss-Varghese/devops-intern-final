@@ -1,5 +1,14 @@
 # DevOps Intern Final Assessment
 
+GitHub Actions badge
+
+[CI] 
+
+https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml/badge.svg
+
+https://github.com/Jiss-Varghese/devops-intern-final/actions/workflows/ci.yml
+
+
 **Name:** Jiss Varghese  
 **Date:** September 17, 2026
 
@@ -164,4 +173,8 @@ jobs:
 
       - name: Run application
         run: python hello.py
-        
+Commit and push CI
+
+git add .github/workflows/ci.yml
+git commit -m "Add GitHub Actions CI workflow"
+git push
