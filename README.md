@@ -34,6 +34,7 @@ devops-intern-final/
 ├── Dockerfile
 ├── hello.py
 └── README.md
+'''
 
 Create the GitHub repository
 Name: devops-intern-final
@@ -440,6 +441,7 @@ curl -G 'http://localhost:3100/loki/api/v1/query_range' \
 
 Output: Hello from container to Loki (Screenshot attached)
 Create loki_setup.txt
+touch monitoring/loki_setup.txt
 code monitoring/loki_setup.txt
   '''text
 
