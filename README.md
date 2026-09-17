@@ -178,3 +178,120 @@ Commit and push CI
 git add .github/workflows/ci.yml README.md
 git commit -m "Add GitHub Actions CI workflow"
 git push
+
+Step 5 — Nomad
+
+Nomad is a workload orchestrator.
+
+In simple terms, it can manage and run applications/jobs.
+
+Here we're going to tell Nomad:
+
+Run my Docker container as a service.
+
+The flow becomes:
+
+'''text
+Docker image
+      ↓
+Nomad job
+      ↓
+Nomad allocation
+      ↓
+Docker container
+
+'''
+
+nomad version
+which nomad
+
+Docker image availability
+
+Nomad needs to be able to obtain the Docker image
+
+If your Nomad job says:
+hello-devops:latest
+but the Nomad environment cannot access that local image
+
+A reliable local setup is to use a local Docker registry.
+
+Start a local Docker registry
+
+docker ps
+docker run -d --name local-registry -p 5001:5000 registry:2
+Tag the image
+
+Create a registry tag:
+docker tag hello-devops:latest localhost:5001/hello-devops:latest
+
+docker images
+
+Push the image
+docker push localhost:5001/hello-devops:latest
+This uploads the image to your local registry.
+
+Now we deploy the Docker container using Nomad
+
+Create the Nomad directory
+
+mkdir -p nomad
+
+touch nomad/hello.nomad
+code nomad/hello.nomad
+  job "hello-devops" {
+
+  datacenters = ["dc1"]
+
+  type = "service"
+
+  group "hello" {
+
+    count = 1
+
+    task "hello" {
+
+      driver = "docker"
+
+      config {
+        image = "localhost:5001/hello-devops:latest"
+        command = "python"
+        args = ["-u", "-c", "import time; print('Hello, DevOps!', flush=True); time.sleep(3600)"]
+      }
+
+      resources {
+        cpu    = 100
+        memory = 128
+      }
+    }
+  }
+}
+
+Validate the job
+
+nomad job validate nomad/hello.nomad
+
+Output: Job validation successful
+
+Start a local Nomad agent
+
+nomad agent -dev
+
+keep the Terminal window open 
+And Open another Terminal window and
+Check Nomad
+nomad node status
+
+Run the job
+nomad job run nomad/hello.nomad
+Check the job status
+nomad job status hello-devops
+
+Check the allocation logs
+nomad job allocations hello-devops
+nomad alloc status c03e952a
+
+view logs
+nomad alloc logs c03e952a
+  Output: Hello, DevOps!
+  
+
