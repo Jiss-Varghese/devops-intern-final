@@ -180,8 +180,8 @@ code .github/workflows/ci.yml
 ```
 Commit and push CI
 
-git add .github/workflows/ci.yml README.md
-git commit -m "Add GitHub Actions CI workflow"
+git add .github/workflows/ci.yml README.md<br>
+git commit -m "Add GitHub Actions CI workflow"<br>
 git push
 
 Step 5 — Nomad
@@ -207,31 +207,31 @@ Docker container
 
 ```
 
-nomad version
+nomad version<br>
 which nomad
 
 Docker image availability
 
 Nomad needs to be able to obtain the Docker image
 
-If your Nomad job says:
-hello-devops:latest
+If your Nomad job says:<br>
+hello-devops:latest<br>
 but the Nomad environment cannot access that local image
 
 A reliable local setup is to use a local Docker registry.
 
 Start a local Docker registry
 
-docker ps
-docker run -d --name local-registry -p 5001:5000 registry:2
+docker ps<br>
+docker run -d --name local-registry -p 5001:5000 registry:2<br>
 Tag the image
 
-Create a registry tag:
+Create a registry tag:<br>
 docker tag hello-devops:latest localhost:5001/hello-devops:latest
 
 docker images
 
-Push the image
+Push the image<br>
 docker push localhost:5001/hello-devops:latest
 This uploads the image to your local registry.
 
@@ -241,15 +241,16 @@ Create the Nomad directory
 
 mkdir -p nomad
 
-touch nomad/hello.nomad
-code nomad/hello.nomad
-  job "hello-devops" {
+touch nomad/hello.nomad<br>
+code nomad/hello.nomad<br>
+```text
+    job "hello-devops" {
 
-  datacenters = ["dc1"]
+    datacenters = ["dc1"]
 
-  type = "service"
+    type = "service"
 
-  group "hello" {
+    group "hello" {
 
     count = 1
 
@@ -271,6 +272,8 @@ code nomad/hello.nomad
   }
 }
 
+```
+
 Validate the job
 
 nomad job validate nomad/hello.nomad
@@ -286,24 +289,24 @@ And Open another Terminal window and
 Check Nomad
 nomad node status
 
-Run the job
-nomad job run nomad/hello.nomad
-Check the job status
+Run the job<br>
+nomad job run nomad/hello.nomad<br>
+Check the job status<br>
 nomad job status hello-devops
 
-Check the allocation logs
-nomad job allocations hello-devops
+Check the allocation logs<br>
+nomad job allocations hello-devops<br>
 nomad alloc status c03e952a
 
-view logs
-nomad alloc logs c03e952a
+view logs<br>
+nomad alloc logs c03e952a<br>
   Output: Hello, DevOps!
 
-git status
-git add nomad/hello.nomad README.md
-git commit -m "Add Nomad deployment configuration"
-git push origin main
-git push
+git status<br>
+git add nomad/hello.nomad README.md<br>
+git commit -m "Add Nomad deployment configuration"<br>
+git push origin main<br>
+git push<br>
 git status
 
 STEP 6 — Grafana Loki Monitoring
@@ -329,13 +332,13 @@ Log query
 
 Why Alloy?
 
-Grafana Alloy can collect logs and forward them to Loki.
-Start Loki
-docker pull grafana/loki:latest
+Grafana Alloy can collect logs and forward them to Loki.<br>
+Start Loki<br>
+docker pull grafana/loki:latest<br>
 docker run -d --name loki -p 3100:3100 grafana/loki:latest -config.file=/etc/loki/local-config.yaml
 
-Output: ready
-Create a test logging container
+Output: ready<br>
+Create a test logging container<br>
 We need a container that continuously produces logs.
 
 docker run -d --name hello-logs hello-devops:latest sh -c "echo 'Hello from container to Loki'; sleep 3600"
@@ -346,10 +349,12 @@ Output: Hello from container to Loki
 
 Install/start Grafana Alloy
 
-docker pull grafana/alloy:latest
-Create the monitoring directory:
-mkdir -p monitoring
+docker pull grafana/alloy:latest<br>
+Create the monitoring directory:<br>
+mkdir -p monitoring<br>
 code monitoring/alloy-config.alloy
+
+```text
   discovery.docker "containers" {
   host = "unix:///var/run/docker.sock"
 }
